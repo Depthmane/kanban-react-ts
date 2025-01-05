@@ -11,13 +11,6 @@ const KanbanBoard: React.FC = () => {
         setTasks(loadedTasks);
     }, []);
 
-    const columns = [
-        { id: 'todo', title: 'To Do' },
-        { id: 'in_progress', title: 'In Progress' },
-        { id: 'review', title: 'Review' },
-        { id: 'done', title: 'Done' },
-    ];
-
     const handleTaskUpdate = (updatedTask: Task) => {
         const updatedTasks = tasks.map((task) =>
             task.id === updatedTask.id ? updatedTask : task
@@ -25,6 +18,19 @@ const KanbanBoard: React.FC = () => {
         setTasks(updatedTasks);
         saveTasks(updatedTasks);
     };
+
+    const handleClearDoneTasks = () => {
+        const remainingTasks = tasks.filter((task) => task.type !== 'done');
+        setTasks(remainingTasks);
+        saveTasks(remainingTasks);
+    };
+
+    const columns = [
+        { id: 'todo', title: 'To Do' },
+        { id: 'in_progress', title: 'In Progress' },
+        { id: 'review', title: 'Review' },
+        { id: 'done', title: 'Done' },
+    ];
 
     return (
         <div className={styles.taskboard}>
@@ -34,7 +40,8 @@ const KanbanBoard: React.FC = () => {
                     id={column.id}
                     title={column.title}
                     tasks={tasks.filter((task) => task.type === column.id)}
-                    onUpdateTask={handleTaskUpdate}  // передаем onUpdateTask
+                    onUpdateTask={handleTaskUpdate}
+                    onClearTasks={column.id === 'done' ? handleClearDoneTasks : undefined}
                 />
             ))}
         </div>

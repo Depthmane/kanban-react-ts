@@ -1,0 +1,32 @@
+.card {
+    background-color: #FFFFFF1A;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 2px solid transparent;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: Fill (398px)px;
+    height: Hug (162px)px;
+    padding: 16px 0px 0px 0px;
+    border-radius: 4px 0px 0px 0px;
+    opacity: 0px;
+
+}
+
+.overdue {
+    border-color: red;
+}
+
+.description {
+
+}
+
+.text {
+    font-size: 14px;
+    color: #FFFFFFDE;
+}
+
+.dates {
+    font-size: 12px;
+    color: #888;
+}

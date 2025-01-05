@@ -1,0 +1,23 @@
+.taskboard {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    padding: 16px;
+    overflow-x: auto;
+    height: 100%;
+    box-sizing: border-box;
+
+}
+
+@media (max-width: 768px) {
+    .board {
+        gap: 12px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .board {
+        justify-content: center;
+        padding: 0 16px;
+    }
+}

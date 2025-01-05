@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import { loadTasks, saveTasks, Task } from '../../utils/taskLoader';
 import Column from '../Column/Column';
 import styles from './KanbanBoard.module.css';
@@ -12,27 +12,33 @@ const KanbanBoard: React.FC = () => {
     }, []);
 
     const columns = [
-        { id: 'todo', title: 'To Do'  },
-        { id: 'in_progress', title: 'In progress' },
+        { id: 'todo', title: 'To Do' },
+        { id: 'in_progress', title: 'In Progress' },
         { id: 'review', title: 'Review' },
-         {id: 'done', title: 'Done' },
+        { id: 'done', title: 'Done' },
     ];
 
-    const handleTaskUpdate = (updatedTasks: Task[]) => {
+    const handleTaskUpdate = (updatedTask: Task) => {
+        const updatedTasks = tasks.map((task) =>
+            task.id === updatedTask.id ? updatedTask : task
+        );
         setTasks(updatedTasks);
         saveTasks(updatedTasks);
     };
 
-    return <div className={styles.taskboard}>
-        {columns.map((column) => (
-            <Column
-                key={column.id}
-                id={column.id}
-                title={column.title}
-                tasks={tasks.filter((task) => task.type === column.id)}
-            />
+    return (
+        <div className={styles.taskboard}>
+            {columns.map((column) => (
+                <Column
+                    key={column.id}
+                    id={column.id}
+                    title={column.title}
+                    tasks={tasks.filter((task) => task.type === column.id)}
+                    onUpdateTask={handleTaskUpdate}  // передаем onUpdateTask
+                />
             ))}
-    </div>;
+        </div>
+    );
 };
 
 export default KanbanBoard;

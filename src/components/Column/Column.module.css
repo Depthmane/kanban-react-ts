@@ -25,6 +25,11 @@
     position: relative;
 }
 
+.icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
 
 .column h2 {
     width: 100%;
@@ -33,31 +38,41 @@
     justify-content: flex-start;
 }
 
-.column.todo h2 .addTask {
+.column.todo h2 .addTask .column.done h2 .trashIcon {
     margin-left: auto;
-}
-
-.icon {
-    width: 24px;
-    height: 24px;
-    margin-right: 8px;
 }
 
 .addTask {
     margin-left: auto;
     cursor: pointer;
     color: var(--text-regular);
+    font-size: 14px;
+}
+
+.addTask:hover, .addTask:active {
+    transition: ease 0.3s;
+    color: var(--blue);
+
+}
+
+.trashButton {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+    margin-left: auto;
+}
+
+.trashButton:hover .trashIcon path {
+    fill: var(--blue);
+    transition: 400ms;
 }
 
 .clearButton {
-    background: none;
-    border: none;
+    background-color: transparent;
+    border: 0;
     cursor: pointer;
-    padding: 0;
     display: flex;
-    margin-left: auto;
-
-
 }
 
 .header {
@@ -75,8 +90,6 @@
     transition: border-color 0.3s ease;
     position: relative;
 }
-
-
 
 .input {
     height: 18px;
@@ -99,7 +112,6 @@
     display: flex;
     justify-content: flex-end;
 }
-
 
 .saveButton {
     background-color: transparent;

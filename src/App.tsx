@@ -7,7 +7,6 @@ import KanbanBoard from "./components/KanbanBoard/KanbanBoard";
 const App: React.FunctionComponent = () => {
     return (
         <div className="App">
-            <h1>Your Tasks</h1>
             <DndProvider backend={HTML5Backend}>
                 <KanbanBoard />
             </DndProvider>

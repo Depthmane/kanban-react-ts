@@ -21,13 +21,13 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onUpdateTask, moveTask }) => 
     const [{ isDragging }, drag] = useDrag({
         type: ItemTypes.TASK,
         item: { id: task.id },
+        canDrag: !isEditing,
         collect: (monitor) => ({
             isDragging: monitor.isDragging(),
         }),
     });
 
     const dragRef = useRef(null);
-
     drag(dragRef);
 
     const handleSave = () => {
@@ -62,7 +62,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onUpdateTask, moveTask }) => 
                     <label>Начало:  </label>
                     {isEditing ? (
                         <input
-                            type="date"
+                            type="text"
                             value={editedStartDay || ''}
                             onChange={(e) => setEditedStartDay(e.target.value)}
                             className={styles.input}
@@ -76,7 +76,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onUpdateTask, moveTask }) => 
                     <label>Окончание:   </label>
                     {isEditing ? (
                         <input
-                            type="date"
+                            type="text"
                             value={editedEndDay || ''}
                             onChange={(e) => setEditedEndDay(e.target.value)}
                             className={styles.input}

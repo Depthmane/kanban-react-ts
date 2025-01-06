@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import TaskCard from "../TaskCard/TaskCard";
 import styles from './Column.module.css';
 import { Task } from "../../utils/taskLoader";
@@ -8,16 +8,21 @@ import { ReactComponent as InProgressIcon } from '../../assets/icons/inProgress.
 import { ReactComponent as ReviewIcon } from '../../assets/icons/review.svg';
 import { ReactComponent as DoneIcon } from '../../assets/icons/done.svg';
 import { ReactComponent as TrashIcon } from '../../assets/icons/trash.svg';
+import { ItemTypes } from '../../utils/ItemTypes';
+import { useDrop } from 'react-dnd';
 
 type ColumnProps = {
-    id: string;
+    id: 'todo' | 'in_progress' | 'review' | 'done';
     title: string;
     tasks: Task[];
     onUpdateTask: (updatedTask: Task) => void;
     onClearTasks?: () => void;
+    moveTask: (taskId: number, targetColumnId: 'todo' | 'in_progress' | 'review' | 'done') => void;
 };
 
-const Column: React.FC<ColumnProps> = ({ id, title, tasks, onUpdateTask, onClearTasks }) => {
+const Column: React.FC<ColumnProps> = ({ id, title, tasks, onUpdateTask, onClearTasks, moveTask }) => {
+    const dropRef = useRef(null);
+
     const getIcon = () => {
         switch (id) {
             case 'todo':
@@ -33,11 +38,27 @@ const Column: React.FC<ColumnProps> = ({ id, title, tasks, onUpdateTask, onClear
         }
     };
 
+    const handleMoveTask = (taskId: number, targetColumnId: 'todo' | 'in_progress' | 'review' | 'done') => {
+        moveTask(taskId, targetColumnId);
+    };
+
+    const [{ isOver }, drop] = useDrop({
+        accept: ItemTypes.TASK,
+        drop: (item: { id: string }) => {
+            moveTask(Number(item.id), id);
+        },
+        collect: (monitor) => ({
+            isOver: monitor.isOver(),
+        }),
+    });
+
+    drop(dropRef);
+
     return (
-        <div className={styles.column}>
+        <div ref={dropRef} className={styles.column}>
             <div className={styles.header}>
                 <h2 className={styles.title}>
-                    {getIcon()} {}
+                    {getIcon()}
                     {title}
                     {id === 'done' && onClearTasks && (
                         <button
@@ -56,6 +77,7 @@ const Column: React.FC<ColumnProps> = ({ id, title, tasks, onUpdateTask, onClear
                         key={task.id}
                         task={task}
                         onUpdateTask={onUpdateTask}
+                        moveTask={handleMoveTask}
                     />
                 ))}
             </div>

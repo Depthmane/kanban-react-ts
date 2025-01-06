@@ -3,13 +3,101 @@
     padding: 10px;
     gap: 8px;
     border-radius: 4px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
+    position: relative;
 
+}
+
+.draggingCard {
+    opacity: 0.5;
 }
 
 label {
     color: var(--text-regular);
+    font-size: 14px;
 }
 
 span {
     color: var(--text-bold);
+    font-size: 14px;
 }
+
+.overdue {
+    color: var(--red);
+}
+
+.overdueCard {
+    border-color: var(--red);
+}
+
+.actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.editButton {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+}
+
+
+.editButton:hover .editIcon path {
+    fill: var(--blue);
+    transition: 400ms;
+}
+
+
+.saveButton {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+
+}
+
+.cancelButton {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+
+}
+
+.circle {
+    background-color: var(--circle-default);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle:hover, .circle:active {
+    transition: 400ms;
+    background-color: var(--circle-active)
+}
+
+.input {
+    height: 18px;
+    color: var(--text-bold);
+    border: 1px solid #FFFFFF80;
+    background-color: transparent;
+    outline: none;
+    padding: 5px;
+    border-radius: 4px;
+    caret-color: var(--blue);
+    transition: border-color 0.3s ease;
+}
+
+.input:focus {
+    border-color: var(--blue);
+}
+
+/*.input::placeholder {
+    color: var(--text-muted);
+}*/

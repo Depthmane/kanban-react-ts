@@ -50,14 +50,3 @@
     transform: translateX(720%);
 }
 
-.clearButton svg {
-    width: 25px;
-    height: 25px;
-    fill: #ff0000;
-    transition: transform 0.2s, fill 0.2s;
-}
-
-.clearButton:hover svg {
-    transform: scale(1.2);
-    fill: #ff4d4d;
-}

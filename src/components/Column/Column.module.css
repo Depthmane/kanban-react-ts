@@ -25,9 +25,16 @@
     position: relative;
 }
 
+
 .column h2 {
+    width: 100%;
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+}
+
+.column.todo h2 .addTask {
+    margin-left: auto;
 }
 
 .icon {
@@ -36,10 +43,10 @@
     margin-right: 8px;
 }
 
-.header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+.addTask {
+    margin-left: auto;
+    cursor: pointer;
+    color: var(--text-regular);
 }
 
 .clearButton {
@@ -48,7 +55,79 @@
     cursor: pointer;
     padding: 0;
     display: flex;
-    align-items: center;
-    transform: translateX(720%);
+    margin-left: auto;
+
+
 }
 
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.newTaskForm {
+    background-color: var(--background-task);
+    padding: 10px;
+    gap: 8px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    transition: border-color 0.3s ease;
+    position: relative;
+}
+
+
+
+.input {
+    height: 18px;
+    color: var(--text-bold);
+    border: 1px solid #FFFFFF80;
+    background-color: transparent;
+    outline: none;
+    padding: 5px;
+    border-radius: 4px;
+    caret-color: var(--blue);
+    transition: border-color 0.3s ease;
+}
+
+.input:focus {
+    border-color: var(--blue);
+}
+
+.actions {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.saveButton {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+
+}
+
+.cancelButton {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    display: flex;
+
+}
+
+.circle {
+    background-color: var(--circle-default);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle:hover, .circle:active {
+    transition: 400ms;
+    background-color: var(--circle-active)
+}

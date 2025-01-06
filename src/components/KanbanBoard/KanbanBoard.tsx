@@ -38,6 +38,12 @@ const KanbanBoard: React.FC = () => {
         saveTasks(remainingTasks);
     };
 
+    const handleAddTask = (task: Task) => {
+        const updatedTasks = [...tasks, task];
+        setTasks(updatedTasks);
+        saveTasks(updatedTasks);
+    };
+
     const columns = [
         { id: 'todo', title: 'To Do' },
         { id: 'in_progress', title: 'In Progress' },
@@ -60,6 +66,8 @@ const KanbanBoard: React.FC = () => {
                         tasks={sortedTasks}
                         onUpdateTask={handleTaskUpdate}
                         moveTask={moveTask}
+                        onClearTasks={column.id === 'done' ? handleClearDoneTasks : undefined}
+                        onAddTask={column.id === 'todo' ? handleAddTask : undefined}
                     />
                 );
             })}

@@ -14,7 +14,6 @@
 }
 
 
-
 .tasks.expanded {
     height: 110%;
     background-color: var(--background-task);
@@ -136,7 +135,7 @@
     border-color: var(--blue);
 }
 
-.inputArea{
+.inputArea {
     margin-left: 5px;
     min-height: 40px;
     resize: vertical;

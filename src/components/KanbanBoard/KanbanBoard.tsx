@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { loadTasks, saveTasks, Task } from '../../utils/taskLoader';
+import React, {useEffect, useState} from 'react';
+import {loadTasks, saveTasks, Task} from '../../utils/taskLoader';
 import Column from '../Column/Column';
 import styles from './KanbanBoard.module.css';
 
@@ -42,7 +42,7 @@ const KanbanBoard: React.FC = () => {
             saveTasks(updatedTasks);
         } else {
             const updatedTasks = tasks.map((task) =>
-                task.id === taskId ? { ...task, type: targetColumnId } : task
+                task.id === taskId ? {...task, type: targetColumnId} : task
             );
             setTasks(updatedTasks);
             saveTasks(updatedTasks);
@@ -95,10 +95,10 @@ const KanbanBoard: React.FC = () => {
     };
 
     const columns = [
-        { id: 'todo', title: 'To Do' },
-        { id: 'in_progress', title: 'In Progress' },
-        { id: 'review', title: 'Review' },
-        { id: 'done', title: 'Done' },
+        {id: 'todo', title: 'To Do'},
+        {id: 'in_progress', title: 'In Progress'},
+        {id: 'review', title: 'Review'},
+        {id: 'done', title: 'Done'},
     ] as { id: ColumnType; title: string }[];
 
     return (

@@ -39,6 +39,7 @@ h1 {
 .searchInput:hover {
     border-color: var(--blue);
 }
+
 .searchInput:focus {
     border: 4px solid #0184CF80;
     box-shadow: 0 0 5px rgba(1, 132, 207, 0.5);

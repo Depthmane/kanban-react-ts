@@ -1,5 +1,4 @@
-import { loadTasks, saveTasks } from './taskLoader';
-import { Task } from './taskLoader';
+import {loadTasks, saveTasks, Task} from './taskLoader';
 
 beforeAll(() => {
     const localStorageMock = (() => {
@@ -21,8 +20,8 @@ beforeAll(() => {
 
 test('tasks should be loaded and sorted by startDay', () => {
     const taskData: Task[] = [
-        { id: 1, type: 'todo', startDay: 10, endDay: 20, text: 'Test Task 1' },
-        { id: 2, type: 'in_progress', startDay: 5, endDay: 15, text: 'Test Task 2' },
+        {id: 1, type: 'todo', startDay: 10, endDay: 20, text: 'Test Task 1'},
+        {id: 2, type: 'in_progress', startDay: 5, endDay: 15, text: 'Test Task 2'},
     ];
 
     saveTasks(taskData);

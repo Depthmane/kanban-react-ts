@@ -1,7 +1,7 @@
-import React, { useState, useRef } from 'react';
-import { Task } from '../../utils/taskLoader';
-import { useDrag } from 'react-dnd';
-import { ItemTypes } from '../../utils/ItemTypes';
+import React, {useRef, useState} from 'react';
+import {Task} from '../../utils/taskLoader';
+import {useDrag} from 'react-dnd';
+import {ItemTypes} from '../../utils/ItemTypes';
 import SaveIcon from '../../assets/icons/check.svg';
 import CancelIcon from '../../assets/icons/cross.svg';
 import styles from './TaskCard.module.css';
@@ -12,15 +12,15 @@ type TaskCardProps = {
     moveTask: (taskId: number, targetColumnId: 'todo' | 'in_progress' | 'review' | 'done') => void;
 };
 
-const TaskCard: React.FC<TaskCardProps> = ({ task, onUpdateTask,}) => {
+const TaskCard: React.FC<TaskCardProps> = ({task, onUpdateTask,}) => {
     const [isEditing, setIsEditing] = useState(false);
     const [editedText, setEditedText] = useState(task.text);
     const [editedStartDay, setEditedStartDay] = useState(task.startDay ? new Date(task.startDay).toLocaleDateString('en-CA') : '');
     const [editedEndDay, setEditedEndDay] = useState(task.endDay ? new Date(task.endDay).toLocaleDateString('en-CA') : '');
 
-    const [{ isDragging }, drag] = useDrag({
+    const [{isDragging}, drag] = useDrag({
         type: ItemTypes.TASK,
-        item: { id: task.id },
+        item: {id: task.id},
         canDrag: !isEditing,
         collect: (monitor) => ({
             isDragging: monitor.isDragging(),
@@ -107,12 +107,12 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onUpdateTask,}) => {
                         <>
                             <button onClick={handleCancel} className={styles.cancelButton}>
                                 <div className={styles.circle}>
-                                    <img src={CancelIcon} alt="Cancel" />
+                                    <img src={CancelIcon} alt="Cancel"/>
                                 </div>
                             </button>
                             <button onClick={handleSave} className={styles.saveButton}>
                                 <div className={styles.circle}>
-                                    <img src={SaveIcon} alt="Save" />
+                                    <img src={SaveIcon} alt="Save"/>
                                 </div>
                             </button>
                         </>
@@ -135,7 +135,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onUpdateTask,}) => {
                                     7.09816 21.6403 6.83545C21.6403 6.57274 21.5886 6.3126 21.488
                                     6.06989C21.3874 5.82719 21.2401 5.60668 21.0543 5.42095L18.5793
                                     2.94495ZM17.9953 11.3079L12.6922 6.00495L3.85725 14.8399L2.78125
-                                    21.2199L9.16125 20.1429L17.9953 11.3079Z" fill="white" />
+                                    21.2199L9.16125 20.1429L17.9953 11.3079Z" fill="white"/>
                                 </svg>
                             </div>
                         </button>

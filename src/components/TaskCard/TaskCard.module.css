@@ -118,7 +118,7 @@ span {
     border-color: var(--blue);
 }
 
-.inputArea{
+.inputArea {
     margin-left: 5px;
     min-height: 40px;
     resize: vertical;

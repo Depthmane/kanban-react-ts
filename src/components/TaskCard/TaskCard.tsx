@@ -50,7 +50,7 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onUpdateTask, moveTask }) => 
         setIsEditing(false);
     };
 
-    const isOverdue = task.endDay && task.endDay < Date.now();
+    const isOverdue = task.endDay && task.endDay < Date.now() && task.type !== 'done';
 
     return (
         <div
@@ -59,10 +59,10 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onUpdateTask, moveTask }) => 
         >
             <div className={styles.body}>
                 <div className={styles.field}>
-                    <label>Начало:  </label>
+                    <label>Начало:</label>
                     {isEditing ? (
                         <input
-                            type="text"
+                            type="date"
                             value={editedStartDay || ''}
                             onChange={(e) => setEditedStartDay(e.target.value)}
                             className={styles.input}
@@ -73,10 +73,10 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onUpdateTask, moveTask }) => 
                 </div>
 
                 <div className={styles.field}>
-                    <label>Окончание:   </label>
+                    <label>Окончание:</label>
                     {isEditing ? (
                         <input
-                            type="text"
+                            type="date"
                             value={editedEndDay || ''}
                             onChange={(e) => setEditedEndDay(e.target.value)}
                             className={styles.input}
@@ -88,13 +88,12 @@ const TaskCard: React.FC<TaskCardProps> = ({ task, onUpdateTask, moveTask }) => 
                     )}
                 </div>
                 <div className={styles.field}>
-                    <label>Описание:    </label>
+                    <label>Описание:</label>
                     {isEditing ? (
-                        <input
-                            type="text"
+                        <textarea
                             value={editedText}
                             onChange={(e) => setEditedText(e.target.value)}
-                            className={styles.input}
+                            className={styles.inputArea}
                         />
                     ) : (
                         <span>{task.text}</span>

@@ -11,16 +11,26 @@
 
 .draggingCard {
     opacity: 0.5;
+    border-color: var(--blue);
 }
 
 label {
     color: var(--text-regular);
     font-size: 14px;
+    margin-right: 10px;
+    align-items: center;
 }
 
 span {
     color: var(--text-bold);
     font-size: 14px;
+    align-items: center;
+}
+
+.field {
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center;
 }
 
 .overdue {
@@ -83,22 +93,42 @@ span {
 }
 
 .input {
-    height: 10px;
-    margin-bottom: 10px;
+    height: content-box;
+    resize: none;
     color: var(--text-bold);
     border: 1px solid #FFFFFF80;
     background-color: transparent;
     outline: none;
-    padding: 5px;
+    padding: 2px;
     border-radius: 4px;
     caret-color: var(--blue);
     transition: border-color 0.3s ease;
 }
 
-.input:focus {
+
+.input:focus, .inputArea:focus {
     border-color: var(--blue);
 }
 
-/*.input::placeholder {
-    color: var(--text-muted);
-}*/
+.input:hover {
+    border-color: var(--blue);
+}
+
+.inputArea:hover {
+    border-color: var(--blue);
+}
+
+.inputArea{
+    margin-left: 5px;
+    min-height: 40px;
+    resize: vertical;
+    margin-bottom: 10px;
+    color: var(--text-bold);
+    border: 1px solid #FFFFFF80;
+    background-color: transparent;
+    outline: none;
+    padding: 2px;
+    border-radius: 4px;
+    caret-color: var(--blue);
+    transition: border-color 0.3s ease;
+}

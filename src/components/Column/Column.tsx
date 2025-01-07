@@ -90,7 +90,7 @@ const Column: React.FC<ColumnProps> = ({ id, title, tasks, onUpdateTask, onClear
                     {id === 'done' && onClearTasks && (
                         <button onClick={onClearTasks} className={styles.trashButton} title="Удалить все задачи">
                             <svg width="24" height="24" viewBox="0 0 24 24"
-                                 fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.trashIcon}>
+                                 fill="none" xmlns="http://www.w3.org/2000/svg" ref={dropRef} className={styles.trashIcon}>
                                 <path d="M20.7264 5.27586H16.0364V4.38586C16.0327 3.75568 15.7813
                                 3.15224 15.3364 2.70586C15.1148 2.48349 14.8514 2.30715 14.5613
                                 2.18702C14.2713 2.06688 13.9603 2.00531 13.6464 2.00586H10.3864C10.0725
@@ -132,11 +132,10 @@ const Column: React.FC<ColumnProps> = ({ id, title, tasks, onUpdateTask, onClear
                     </div>
                     <div className={styles.field}>
                         <label>Описание:</label>
-                        <input
-                            type="text"
+                        <textarea
                             value={newTaskText}
                             onChange={(e) => setNewTaskText(e.target.value)}
-                            className={styles.input}
+                            className={styles.inputArea}
                         />
                     </div>
 

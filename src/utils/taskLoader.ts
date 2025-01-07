@@ -3,9 +3,10 @@ import tasks from '../assets/tasks.json';
 export const loadTasks = (): Task[] => {
     const savedTasks = localStorage.getItem('tasks');
     if (savedTasks) {
-        return JSON.parse(savedTasks);
+        const tasks: Task[] = JSON.parse(savedTasks);
+        return tasks.sort((a, b) => a.startDay - b.startDay);
     }
-    return tasks as Task[];
+    return tasks.sort((a, b) => a.startDay - b.startDay) as Task[];
 };
 
 export const saveTasks = (tasks: Task[]): void => {

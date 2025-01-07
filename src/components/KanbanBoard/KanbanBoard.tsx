@@ -18,6 +18,7 @@ const KanbanBoard: React.FC = () => {
         setTasks(loadedTasks);
     }, []);
 
+
     useEffect(() => {
         const timer = setTimeout(() => {
             setDebouncedSearchQuery(searchQuery);
@@ -34,12 +35,18 @@ const KanbanBoard: React.FC = () => {
         saveTasks(updatedTasks);
     };
 
-    const moveTask = (taskId: number, targetColumnId: ColumnType) => {
-        const updatedTasks = tasks.map((task) =>
-            task.id === taskId ? { ...task, type: targetColumnId } : task
-        );
-        setTasks(updatedTasks);
-        saveTasks(updatedTasks);
+    const moveTask = (taskId: number, targetColumnId: ColumnType, isDeletion: boolean = false) => {
+        if (isDeletion) {
+            const updatedTasks = tasks.filter(task => task.id !== taskId);
+            setTasks(updatedTasks);
+            saveTasks(updatedTasks);
+        } else {
+            const updatedTasks = tasks.map((task) =>
+                task.id === taskId ? { ...task, type: targetColumnId } : task
+            );
+            setTasks(updatedTasks);
+            saveTasks(updatedTasks);
+        }
     };
 
     const handleAddTask = (task: Task) => {
@@ -65,6 +72,27 @@ const KanbanBoard: React.FC = () => {
 
         return descriptionMatch || dateMatch(task.startDay) || dateMatch(task.endDay);
     });
+
+    //   const handleMove = (taskId: number, targetColumnId: ColumnType) => {
+    //    const taskExists = tasks.some(task => task.id === taskId);
+
+    //   console.log("task exists", taskExists);
+
+    //    if (!taskExists) {
+    //      console.log(" deleted, skipping");
+    //      return; //
+    //  }
+
+    //  moveTask(taskId, targetColumnId);
+    //  };
+
+    const handleTaskDelete = (taskId: number) => {
+        const updatedTasks = tasks.filter((task) => task.id !== taskId);
+        setTasks(updatedTasks);
+        moveTask(taskId, 'done', true);
+
+        saveTasks(updatedTasks);
+    };
 
     const columns = [
         { id: 'todo', title: 'To Do' },
@@ -102,6 +130,7 @@ const KanbanBoard: React.FC = () => {
                             moveTask={moveTask}
                             onClearTasks={column.id === 'done' ? handleClearDoneTasks : undefined}
                             onAddTask={column.id === 'todo' ? handleAddTask : undefined}
+                            onDeleteTask={handleTaskDelete}
                         />
                     );
                 })}

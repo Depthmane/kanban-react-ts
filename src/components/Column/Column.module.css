@@ -1,6 +1,7 @@
 .column {
     width: 300px;
     height: min-content;
+    min-height: 150px;
     flex-shrink: 0;
     background-color: var(--background-column);
     border-radius: 8px;
@@ -9,6 +10,14 @@
     flex-direction: column;
     gap: 12px;
     position: relative;
+    transition: all 0.2s ease;
+}
+
+
+
+.tasks.expanded {
+    height: 110%;
+    background-color: var(--background-task);
 }
 
 .title {
@@ -23,6 +32,8 @@
     flex-direction: column;
     gap: 8px;
     position: relative;
+    min-height: 100px;
+    transition: all 0.2s ease;
 }
 
 .icon {
@@ -70,6 +81,10 @@
 .trashButton:hover .trashIcon path {
     fill: var(--blue);
     transition: 400ms;
+}
+
+.trashIcon.expanded {
+    fill: var(--red)
 }
 
 .clearButton {

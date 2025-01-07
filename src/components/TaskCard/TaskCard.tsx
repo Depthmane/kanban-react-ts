@@ -12,7 +12,7 @@ type TaskCardProps = {
     moveTask: (taskId: number, targetColumnId: 'todo' | 'in_progress' | 'review' | 'done') => void;
 };
 
-const TaskCard: React.FC<TaskCardProps> = ({ task, onUpdateTask, moveTask }) => {
+const TaskCard: React.FC<TaskCardProps> = ({ task, onUpdateTask,}) => {
     const [isEditing, setIsEditing] = useState(false);
     const [editedText, setEditedText] = useState(task.text);
     const [editedStartDay, setEditedStartDay] = useState(task.startDay ? new Date(task.startDay).toLocaleDateString('en-CA') : '');

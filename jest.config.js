@@ -16,10 +16,10 @@ module.exports = {
         '^.+\\.(js|jsx|mjs)$': 'babel-jest',
     },
     testPathIgnorePatterns: [
-        '/node_modules/',  // Игнорируем node_modules
-        '/src/(?!utils/taskLoaderTest.ts)/',  // Игнорируем все файлы, кроме taskLoaderTest.ts
+        '/node_modules/',
+        '/src/(?!utils/taskLoaderTest.ts)/',
     ],
     testMatch: [
-        '<rootDir>/src/utils/taskLoaderTest.ts',  // Явное указание пути к тесту
+        '<rootDir>/src/utils/taskLoaderTest.ts',
     ],
 };

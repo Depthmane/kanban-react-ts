@@ -13,7 +13,7 @@
 
 1. Клонируйте репозиторий:
    ```bash
-   git clone https://github.com/<your-username>/kanban-react-ts.git
+   git clone https://github.com/Depthmane/kanban-react-ts.git
    ```
 2. Перейдите в папку проекта
    ```

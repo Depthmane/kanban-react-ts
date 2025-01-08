@@ -120,7 +120,7 @@ span {
 
 .inputArea {
     margin-left: 5px;
-    min-height: 40px;
+    min-height: 50px;
     resize: vertical;
     margin-bottom: 10px;
     color: var(--text-bold);

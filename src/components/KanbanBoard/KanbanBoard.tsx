@@ -107,7 +107,7 @@ const KanbanBoard: React.FC = () => {
                 <h1>Your Tasks</h1>
                 <input
                     type="text"
-                    placeholder="Поиск..."
+                    placeholder="поиск..."
                     className={styles.searchInput}
                     value={searchQuery}
                     onChange={(e) => setSearchQuery(e.target.value)}

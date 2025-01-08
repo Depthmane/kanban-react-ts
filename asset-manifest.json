@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/kanban-react-ts/static/css/main.5614a575.css",
+    "main.js": "/kanban-react-ts/static/js/main.30f195ed.js",
+    "static/media/background.svg": "/kanban-react-ts/static/media/background.121d9ccd5ca8a212768b.svg",
+    "static/media/cross.svg": "/kanban-react-ts/static/media/cross.2a51b9cd7223ad688b02745b14d22de0.svg",
+    "static/media/inProgress.svg": "/kanban-react-ts/static/media/inProgress.b245c030f4cb6c8b6f9a186892cb4d5c.svg",
+    "static/media/review.svg": "/kanban-react-ts/static/media/review.29b1cd0ae862b07ae2114f1ee5688b24.svg",
+    "static/media/search.svg": "/kanban-react-ts/static/media/search.24896851b3933c0310f3.svg",
+    "static/media/todo.svg": "/kanban-react-ts/static/media/todo.56c0827f3790774f817b4aa5acf7ebb8.svg",
+    "static/media/done.svg": "/kanban-react-ts/static/media/done.1fbb73841386baeac1ef8d732ac4f041.svg",
+    "index.html": "/kanban-react-ts/index.html",
+    "static/media/check.svg": "/kanban-react-ts/static/media/check.bc69713c9aedb83e1a2e1da76f7a241e.svg",
+    "main.5614a575.css.map": "/kanban-react-ts/static/css/main.5614a575.css.map",
+    "main.30f195ed.js.map": "/kanban-react-ts/static/js/main.30f195ed.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5614a575.css",
+    "static/js/main.30f195ed.js"
+  ]
+}

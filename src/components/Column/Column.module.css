@@ -16,23 +16,34 @@
 }
 
 @media (max-width: 1200px) {
+    .taskboard {
+        gap: 12px;
+    }
+
     .column {
         width: 30%;
     }
 }
 
 @media (max-width: 768px) {
+    .taskboard {
+        gap: 8px;
+    }
+
     .column {
-        width: 45%;
+        width: 48%;
     }
 }
 
 @media (max-width: 480px) {
+    .taskboard {
+        gap: 4px;
+    }
+
     .column {
         width: 100%;
     }
 }
-
 
 .tasks.expanded {
     height: 110%;

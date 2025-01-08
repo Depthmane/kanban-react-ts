@@ -9,11 +9,25 @@
     font-family: Inter, sans-serif;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
     .taskboard {
+        gap: 12px;
         padding: 8px;
     }
 }
+
+@media (max-width: 768px) {
+    .taskboard {
+        gap: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .taskboard {
+        gap: 4px;
+    }
+}
+
 
 h1 {
     font-size: 40px;

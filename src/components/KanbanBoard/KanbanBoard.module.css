@@ -33,8 +33,8 @@ h1 {
     outline: none;
     color: var(--text-regular);
     background-color: var(--background-task);
-    height: 40px;
-    width: 430px;
+    height: 35px;
+    width: 21%;
     border: 1px solid #FFFFFF4D;
     align-items: center;
     border-radius: 20px;

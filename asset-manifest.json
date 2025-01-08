@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/kanban-react-ts/static/css/main.0f86e2f5.css",
+    "main.css": "/kanban-react-ts/static/css/main.8e35330a.css",
     "main.js": "/kanban-react-ts/static/js/main.f9c26884.js",
     "static/media/background.svg": "/kanban-react-ts/static/media/background.121d9ccd5ca8a212768b.svg",
     "static/media/cross.svg": "/kanban-react-ts/static/media/cross.2a51b9cd7223ad688b02745b14d22de0.svg",
@@ -11,11 +11,11 @@
     "static/media/done.svg": "/kanban-react-ts/static/media/done.1fbb73841386baeac1ef8d732ac4f041.svg",
     "index.html": "/kanban-react-ts/index.html",
     "static/media/check.svg": "/kanban-react-ts/static/media/check.bc69713c9aedb83e1a2e1da76f7a241e.svg",
-    "main.0f86e2f5.css.map": "/kanban-react-ts/static/css/main.0f86e2f5.css.map",
+    "main.8e35330a.css.map": "/kanban-react-ts/static/css/main.8e35330a.css.map",
     "main.f9c26884.js.map": "/kanban-react-ts/static/js/main.f9c26884.js.map"
   },
   "entrypoints": [
-    "static/css/main.0f86e2f5.css",
+    "static/css/main.8e35330a.css",
     "static/js/main.f9c26884.js"
   ]
 }

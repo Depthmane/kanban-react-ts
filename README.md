@@ -1,46 +1,45 @@
-# Getting Started with Create React App
+  # Kanban React TypeScript
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Описание
 
-## Available Scripts
+Это приложение канбан-доски, написанное на React с использованием TypeScript. Пользователи могут добавлять, удалять и перетаскивать задачи между колонками, а также фильтровать задачи по поисковому запросу.
 
-In the project directory, you can run:
+## Запуск проекта
 
-### `npm start`
+1. Клонируйте репозиторий:
+   ```bash
+   git clone https://github.com/<your-username>/kanban-react-ts.git
+   ```
+2. Перейдите в папку проекта
+   ```
+   cd kanban-react-ts
+   ```
+4. Установите зависимости
+   ```
+   npm install
+   ```
+6. Запустите приложение на дев-сервере
+   ```
+   npm run start
+   ```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+После этого приложение будет доступно по адресу **http://localhost:3000**.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Деплой на gh-pages
 
-### `npm test`
+Приложение задеплоено на GitHub Pages. Для доступа перейдите по следующему адресу:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**https://depthmane.github.io/kanban-react-ts/**
 
-### `npm run build`
+## Юнит-тесты
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Для тестирования функций в проекте используется Jest. Один из юнит-тестов — для утилитной функции, которая загружает задачи из JSON файла и сортирует их по дате начала.
+Путь до теста
+```
+src/utils/taskLoaderTest.ts
+```
+Чтобы запустить тесты, выполните команду:
+```
+npm run test
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).

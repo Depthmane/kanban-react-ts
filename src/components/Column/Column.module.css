@@ -1,5 +1,6 @@
 .column {
-    width: 300px;
+    width: 22%;
+    min-width: 250px;
     height: min-content;
     min-height: 150px;
     flex-shrink: 0;
@@ -11,6 +12,25 @@
     gap: 12px;
     position: relative;
     transition: all 0.2s ease;
+    font-family: Inter, sans-serif;
+}
+
+@media (max-width: 1200px) {
+    .column {
+        width: 30%;
+    }
+}
+
+@media (max-width: 768px) {
+    .column {
+        width: 45%;
+    }
+}
+
+@media (max-width: 480px) {
+    .column {
+        width: 100%;
+    }
 }
 
 

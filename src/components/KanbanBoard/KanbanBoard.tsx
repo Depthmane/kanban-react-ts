@@ -102,7 +102,7 @@ const KanbanBoard: React.FC = () => {
     ] as { id: ColumnType; title: string }[];
 
     return (
-        <div>
+        <div className={styles.kanbanContent}>
             <div className={styles.searchWrapper}>
                 <h1>Your Tasks</h1>
                 <input

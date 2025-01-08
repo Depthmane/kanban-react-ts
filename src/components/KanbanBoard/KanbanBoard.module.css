@@ -1,22 +1,32 @@
 .taskboard {
     display: flex;
     flex-direction: row;
-    gap: 16px;
-    padding: 16px;
-    overflow-x: auto;
+    justify-content: space-between;
+    width: 100%;
     height: 100%;
+    padding: 16px;
     box-sizing: border-box;
+    font-family: Inter, sans-serif;
+}
+
+@media (max-width: 768px) {
+    .taskboard {
+        padding: 8px;
+    }
 }
 
 h1 {
     font-size: 40px;
     color: var(--text-bold);
+    font-family: Inter, sans-serif;
 }
 
 .searchWrapper {
     justify-content: space-between;
     align-items: center;
     display: flex;
+    font-family: Inter, sans-serif;
+    padding: 16px;
 }
 
 .searchInput {
@@ -33,6 +43,7 @@ h1 {
     background-position: 10px center;
     background-repeat: no-repeat;
     transition: border 0.3s ease, box-shadow 0.3s ease;
+    font-family: Inter, sans-serif;
 }
 
 .searchInput:hover {
@@ -44,16 +55,3 @@ h1 {
     box-shadow: 0 0 5px rgba(1, 132, 207, 0.5);
 }
 
-
-@media (max-width: 768px) {
-    .board {
-        gap: 12px;
-    }
-}
-
-@media (min-width: 1920px) {
-    .board {
-        justify-content: center;
-        padding: 0 16px;
-    }
-}
